@@ -1,5 +1,10 @@
 # PackLoader 
 ![Banner](https://raw.githubusercontent.com/natan307/PackLoader/refs/heads/main/Banner.png)
+<p align="center">
+  <a href="https://patreon.com/Natan307">
+    <img src="https://img.shields.io/badge/Patreon-Support-F96854?logo=patreon&logoColor=white" alt="Patreon">
+  </a>
+</p>
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21%20--%2026.3-brightgreen)
 ![Java](https://img.shields.io/badge/Java-21%2B-orange)
 ![Platform](https://img.shields.io/badge/Paper%20%7C%20Spigot-supported-blue)
