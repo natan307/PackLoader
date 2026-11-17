@@ -1,5 +1,5 @@
 # PackLoader
-![PackLoader Banner](https://imgur.com/ZKFEI7G.img) 
+![PackLoader Banner](https://imgur.com/ZKFEI7G) 
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21%20--%2026.3-brightgreen)
 ![Java](https://img.shields.io/badge/Java-21%2B-orange)
 ![Platform](https://img.shields.io/badge/Paper%20%7C%20Spigot-supported-blue)
