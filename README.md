@@ -1,4 +1,5 @@
 # PackLoader 
+![Banner](https://github.com/natan307/PackLoader/blob/6193b3ee72d8e277779b7dcdb06e8912b6c7ee5e/Banner.png)
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21%20--%2026.3-brightgreen)
 ![Java](https://img.shields.io/badge/Java-21%2B-orange)
 ![Platform](https://img.shields.io/badge/Paper%20%7C%20Spigot-supported-blue)
