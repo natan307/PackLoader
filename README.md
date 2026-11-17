@@ -110,11 +110,3 @@ Copyright (c) 2026 Natan/Ezra. **All Rights Reserved** - see [LICENSE](LICENSE).
 ---
 
 PackLoader by Natan/Ezra - [github.com/natan307](https://github.com/natan307)
-
-## `metrics`
-
-| Key | Default | Description |
-|---|---|---|
-| `enabled` | `true` | Send anonymous usage statistics through [bStats](https://bstats.org). |
-
-Data sent: server, Java and OS version, player count, PackLoader version, `cdn.mode` and whether the optimizer is enabled. No IP addresses, hostnames, player names or pack contents. You can also disable bStats for all plugins in `plugins/bStats/config.yml`.
