@@ -1,0 +1,52 @@
+# ============================================================
+#  PackLoader GUI definitions (every .yml in plugins/PackLoader/guis/)
+#
+#  Open with: /packloader gui <id> [player]
+#
+#  Keys per GUI:
+#    title        Inventory title (supports & and &#RRGGBB colours)
+#    rows         1-6
+#    background   "namespace:path" of a PNG in your pack (textures/<path>.png).
+#                 The image is drawn over the vanilla GUI. Make the slot areas
+#                 TRANSPARENT in the PNG so items stay visible (see the example).
+#    offset_x/y   Shift the background in pixels
+#    hide_title   true = do not show the title text
+#    buttons      slot number -> button
+#
+#  Button keys:
+#    item         PackLoader item id (custom model), OR
+#    material     vanilla material
+#    name, lore   text (supports colours)
+#    commands     list, each starting with an action:
+#                   [close]            close the GUI
+#                   [player] <cmd>     run as the player (no leading /)
+#                   [console] <cmd>    run as console
+#                   [message] <text>   send a chat message
+#                   [open] <gui id>    open another GUI
+#                   [give] <item id>   give a PackLoader item
+#                 %player% = player name
+# ============================================================
+guis:
+  example_menu:
+    title: "&8Example menu"
+    rows: 3
+    background: "packloader:gui/example_menu"
+    buttons:
+      11:
+        item: ruby_flat
+        name: "&cTake a ruby"
+        lore:
+          - "&7Click to receive a ruby"
+        commands:
+          - "[give] ruby_flat"
+          - "[message] &aYou received a ruby!"
+      13:
+        material: BARRIER
+        name: "&cClose"
+        commands:
+          - "[close]"
+      15:
+        item: ruby_crystal
+        name: "&cTake a 3D crystal"
+        commands:
+          - "[give] ruby_crystal"

@@ -1,0 +1,48 @@
+# ============================================================
+#  PackLoader item definitions
+#  Every .yml file in plugins/PackLoader/items/ is loaded.
+#
+#  Keys per item:
+#    display_name   Name (supports & and &#RRGGBB colours)
+#    material       Base Minecraft material (default PAPER)
+#    lore           List of lore lines
+#    texture        "namespace:path" of a PNG texture (no .png) -> a flat 2D item model is generated
+#    parent         generated (default) or handheld, only used with 'texture'
+#    model          "namespace:path" of a model .json in your pack (Blockbench 3D export) -> item definition is generated
+#    item_model     Use an item definition that already exists in your pack (assets/<ns>/items/<name>.json)
+#    custom_model_data  Optional integer, set on the item as well
+#    glint          true/false  enchantment glow
+#    unbreakable    true/false
+#    hide_flags     true/false  hide attribute/enchant tooltips
+#
+#  The generated item is given via: /packloader give <player> <id> [amount]
+#  Item ids may only contain a-z, 0-9 and _
+# ============================================================
+items:
+  ruby_flat:
+    display_name: "&cRuby &7(2D)"
+    material: PAPER
+    lore:
+      - "&7Flat item generated from a texture"
+    texture: "packloader:item/ruby"
+
+  ruby_crystal:
+    display_name: "&cRuby Crystal &7(3D)"
+    material: PAPER
+    lore:
+      - "&7A 3D model loaded from the pack"
+    model: "packloader:item/ruby_crystal"
+    glint: true
+
+  # Same model, but placeable: right click to place a 3D block, left click to break it.
+  # Collision uses an invisible barrier block; the model is an ItemDisplay entity.
+  ruby_block:
+    display_name: "&cRuby Block"
+    material: PAPER
+    model: "packloader:item/ruby_crystal"
+    block:
+      scale: 1.0          # size of the displayed model
+      rotation: 90        # snap facing to multiples of N degrees (0 = no rotation)
+      transform: NONE     # NONE, FIXED, HEAD, GROUND, GUI ...
+      glow: false         # full brightness
+      sound: stone        # block.stone.place / block.stone.break

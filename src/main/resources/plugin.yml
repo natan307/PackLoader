@@ -1,0 +1,19 @@
+name: PackLoader
+version: '${project.version}'
+main: com.natan307.packloader.PackLoader
+api-version: '1.21'
+description: Self-hosted resource packs and custom 3D items, no external link needed.
+author: Natan/Ezra
+website: https://github.com/natan307
+
+commands:
+  packloader:
+    description: PackLoader main command
+    usage: /<command> <reload|send|give|list|url|upload|info|gui|browser|diag>
+    aliases: [ploader, pkl]
+    permission: packloader.admin
+
+permissions:
+  packloader.admin:
+    description: Use all PackLoader commands
+    default: op

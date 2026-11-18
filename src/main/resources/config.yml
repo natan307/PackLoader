@@ -1,0 +1,87 @@
+# ============================================================
+#  PackLoader - config.yml
+#  Drop resource packs (.zip or folders) into plugins/PackLoader/packs/
+#  PackLoader merges them, hosts the result itself and sends it to players.
+#  Author: Natan/Ezra - MIT License - Support: https://ko-fi.com/natanezra
+# ============================================================
+
+http:
+  # Address the built-in web server binds to. 0.0.0.0 = all interfaces.
+  bind-address: "0.0.0.0"
+
+  # TCP port players download the pack from.
+  # IMPORTANT: this port must be open / port-forwarded on your host
+  # (on Pterodactyl-style panels: create an extra allocation for it).
+  # Changing the port requires a server restart.
+  port: 8163
+
+  # Hostname or IP that players use to reach this server (no http://, no port).
+  # Empty = use the hostname the player connected with (Paper) or server-ip.
+  # Setting this explicitly is recommended.
+  public-host: ""
+
+  # Port written in the download URL. 0 = same as 'port'.
+  # Change it when you forward a different external port or use a reverse proxy.
+  public-port: 0
+
+  # true if a reverse proxy (nginx, Cloudflare, ...) serves the pack over HTTPS.
+  public-https: false
+
+send:
+  # Send the pack to players when they join.
+  on-join: true
+  # Delay after join before the pack is sent (20 ticks = 1 second).
+  delay-ticks: 20
+  # Players who decline are disconnected by the client when true.
+  force: false
+  # Text shown in the download prompt. Supports & colour codes.
+  prompt: "&aPlease accept the server resource pack"
+
+resource-pack:
+  # Namespace for generated items (assets/<namespace>/items/<id>.json).
+  namespace: "packloader"
+  # Description inside pack.mcmeta. Supports & colour codes.
+  description: "&bPackLoader resource pack"
+  # 0 = detect from the server version. Set a number to override.
+  # (You can also put your own pack.mcmeta at plugins/PackLoader/pack.mcmeta
+  #  and it will be used as-is.)
+  pack-format: 0
+
+upload:
+  # Enables the /packloader upload web page (token protected, temporary).
+  enabled: true
+  max-size-mb: 200
+  token-expire-minutes: 15
+
+optimize:
+  # Lossless size reduction when the pack is built:
+  #  - JSON files are minified
+  #  - PNG data is recompressed at maximum level (pixels are never changed)
+  #  - zip is written at compression level 9
+  enabled: true
+  # Also remove PNG metadata chunks (text, timestamps, colour profiles).
+  strip-png-metadata: true
+
+cdn:
+  # none   = players download from the built-in web server (default)
+  # url    = players download from 'public-url'; you put the file there yourself
+  # upload = after every build PackLoader uploads the pack (HTTP PUT/POST) and
+  #          players download from 'public-url'. If the upload fails, the built-in
+  #          server is used as a fallback.
+  #
+  # Placeholders: {hash} = SHA-1 of the pack, {file} = file name (pack-<hash>.zip)
+  # Using {hash} in the URLs gives every version its own address, so CDN caches never serve an old pack.
+  mode: none
+  public-url: "https://cdn.example.com/packs/{file}"
+  upload-url: "https://storage.example.com/packs/{file}"
+  upload-method: PUT
+  # Extra headers for the upload request (API keys etc). Never printed in /packloader diag.
+  upload-headers:
+    AccessKey: "your-storage-api-key"
+
+metrics:
+  # Anonymous usage statistics through bStats (https://bstats.org).
+  # Sent: server/Java/OS version, player count, PackLoader version, and two settings
+  # (cdn.mode and whether the optimizer is on). No IPs, hostnames, player names or pack contents.
+  # You can also disable bStats for ALL plugins in plugins/bStats/config.yml.
+  enabled: true
