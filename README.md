@@ -1,10 +1,10 @@
-# PackLoader 
-![Banner](https://raw.githubusercontent.com/natan307/PackLoader/refs/heads/main/Banner.png)
-<a href="https://patreon.com/Natan307"><img src="https://img.shields.io/badge/Patreon-Support-F96854?logo=patreon&logoColor=white" alt="Patreon"></a>
+# PackLoader
+
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21%20--%2026.3-brightgreen)
 ![Java](https://img.shields.io/badge/Java-21%2B-orange)
 ![Platform](https://img.shields.io/badge/Paper%20%7C%20Spigot-supported-blue)
-![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)
+![License](https://img.shields.io/badge/license-MIT-green)
+[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/natanezra)
 
 **Host your Minecraft resource pack straight from your server - no external link needed.**
 
@@ -21,7 +21,7 @@ PackLoader merges every resource pack you drop into a folder, hosts the result w
 - **Pack optimizer** - lossless JSON minify and PNG recompression, deterministic output.
 - **CDN support** - serve the pack from your own URL, or let PackLoader upload it after every build.
 - **Support report** - `/packloader diag` writes a ready-to-send diagnostic file with secrets removed.
-- **No telemetry.** The only outgoing requests are the ones you configure (CDN upload) and a self-test of your own pack URL in `/packloader diag`.
+- **Anonymous usage statistics** through [bStats](https://bstats.org), easy to disable with `metrics.enabled: false`. Other outgoing requests are only the ones you configure (CDN upload) and a self-test of your own pack URL in `/packloader diag`.
 
 ## Compatibility
 
@@ -103,9 +103,11 @@ Everything is in the [Wiki](https://github.com/natan307/PackLoader/wiki):
 
 Open an [issue](https://github.com/natan307/PackLoader/issues) and attach the file created by `/packloader diag`.
 
+If PackLoader is useful to you, you can support development on [Ko-fi](https://ko-fi.com/natanezra).
+
 ## License
 
-Copyright (c) 2026 Natan/Ezra. **All Rights Reserved** - see [LICENSE](LICENSE). Viewing and forking on GitHub is allowed by the GitHub Terms of Service; any other use requires written permission from the author.
+Copyright (c) 2026 Natan/Ezra. Released under the [MIT License](LICENSE).
 
 ---
 
